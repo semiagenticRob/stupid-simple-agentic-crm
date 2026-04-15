@@ -1,0 +1,39 @@
+id: 1
+first_name: Alice
+last_name: Johnson
+slug: alice-johnson
+
+emails:
+  - label: work
+    value: alice.johnson@example.com
+  - label: personal
+    value: alicej@email.example
+
+phones:
+  - label: mobile
+    value: "+1-555-101-0001"
+
+company: Northwind Labs
+job_title: Marketing Director
+industry: technology
+geography: "Denver, CO"
+birthday: "1988-06-14"
+
+warmth: 4
+tags: [colorado-ai-lab, vip]
+
+notes: "Met at Rocky Mountain Tech Conference 2025. Interested in AI consulting for her team. Strong connector — introduced me to Bob and Carol."
+
+next_contact: "2026-04-22"
+last_contacted: "2026-04-01"
+
+history:
+  - date: "2026-04-01"
+    type: call
+    summary: "Discussed Q2 project scope. She's getting budget approval next week."
+  - date: "2026-03-10"
+    type: meeting
+    summary: "Coffee at Union Station. Introduced me to her CTO."
+  - date: "2025-11-15"
+    type: meeting
+    summary: "Initial meeting at Rocky Mountain Tech Conference — very positive"

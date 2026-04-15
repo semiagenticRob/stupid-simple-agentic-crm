@@ -1,0 +1,31 @@
+id: 4
+first_name: David
+last_name: Okafor
+slug: david-okafor
+
+emails:
+  - label: work
+    value: dokafor@example.com
+
+phones:
+  - label: main
+    value: "+1-555-101-0004"
+
+company: Granite City Schools
+job_title: Superintendent
+industry: education
+geography: "Arvada, CO"
+birthday: ""
+
+warmth: 2
+tags: [civic, colorado]
+
+notes: "Met at city council meeting. Interested in transparency tools for school board."
+
+next_contact: "2026-06-01"
+last_contacted: "2026-02-15"
+
+history:
+  - date: "2026-02-15"
+    type: meeting
+    summary: "Brief chat after council meeting. Exchanged cards."

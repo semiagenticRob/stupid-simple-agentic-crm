@@ -1,0 +1,36 @@
+id: 2
+first_name: Bob
+last_name: Martinez
+slug: bob-martinez
+
+emails:
+  - label: work
+    value: bob.martinez@example.com
+
+phones:
+  - label: mobile
+    value: "+1-555-101-0002"
+  - label: work
+    value: "+1-555-200-0002"
+
+company: Redwood Ventures
+job_title: Partner
+industry: venture-capital
+geography: "San Francisco, CA"
+birthday: ""
+
+warmth: 3
+tags: [investor, referral-source]
+
+notes: "Referred by Alice Johnson. Interested in early-stage AI startups."
+
+next_contact: "2026-05-01"
+last_contacted: "2026-03-20"
+
+history:
+  - date: "2026-03-20"
+    type: email
+    summary: "Sent deck for Project Atlas. He'll review and circle back."
+  - date: "2026-02-14"
+    type: call
+    summary: "Intro call — 30 min. Likes the AI-for-local-gov angle."

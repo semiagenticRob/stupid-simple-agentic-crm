@@ -1,0 +1,34 @@
+id: 5
+first_name: Elena
+last_name: Ross
+slug: elena-ross
+
+emails:
+  - label: primary
+    value: elena.ross@example.com
+
+phones:
+  - label: mobile
+    value: "+1-555-101-0005"
+
+company: Peakline Design
+job_title: Founder
+industry: design
+geography: "Boulder, CO"
+birthday: "1985-08-22"
+
+warmth: 3
+tags: [colorado-ai-lab, freelancer]
+
+notes: "Freelance UX designer. Did contract work on Project Atlas landing page."
+
+next_contact: "2026-05-10"
+last_contacted: "2026-03-28"
+
+history:
+  - date: "2026-03-28"
+    type: email
+    summary: "Sent final invoice for landing page work. Great to work with."
+  - date: "2026-02-01"
+    type: meeting
+    summary: "Kickoff for landing page redesign. 2-week timeline."

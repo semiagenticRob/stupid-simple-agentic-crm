@@ -1,0 +1,26 @@
+id: 6
+first_name: Frank
+last_name: ""
+slug: frank
+
+emails: []
+
+phones:
+  - label: mobile
+    value: "+1-555-101-0006"
+
+company: ""
+job_title: ""
+industry: ""
+geography: ""
+birthday: ""
+
+warmth: 0
+tags: []
+
+notes: ""
+
+next_contact: ""
+last_contacted: ""
+
+history: []

@@ -1,0 +1,38 @@
+id: 7
+first_name: Grace
+last_name: Kim
+slug: grace-kim
+
+emails:
+  - label: work
+    value: gkim@example.com
+  - label: personal
+    value: grace.kim.personal@email.example
+
+phones:
+  - label: mobile
+    value: "+1-555-101-0007"
+  - label: work
+    value: "+1-555-200-0007"
+
+company: Meridian Health
+job_title: VP of Operations
+industry: healthcare
+geography: "Chicago, IL"
+birthday: "1982-03-17"
+
+warmth: 3
+tags: [10ksb-alumni, healthcare]
+
+notes: "10KSB cohort 12. Sharp operator. Runs a network of 3 clinics."
+
+next_contact: "2026-04-30"
+last_contacted: "2026-03-15"
+
+history:
+  - date: "2026-03-15"
+    type: call
+    summary: "Quarterly check-in. She's opening a 4th clinic in Q3."
+  - date: "2025-12-10"
+    type: meeting
+    summary: "10KSB alumni holiday mixer. Good conversation about scaling ops."

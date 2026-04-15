@@ -1,0 +1,8 @@
+id,slug,first_name,last_name,primary_email,primary_phone,company,warmth,tags,next_contact,last_contacted,birthday
+1,alice-johnson,Alice,Johnson,alice.johnson@example.com,+1-555-101-0001,Northwind Labs,4,colorado-ai-lab|vip,2026-04-22,2026-04-01,1988-06-14
+2,bob-martinez,Bob,Martinez,bob.martinez@example.com,+1-555-101-0002,Redwood Ventures,3,investor|referral-source,2026-05-01,2026-03-20,
+3,carol-nguyen,Carol,Nguyen,carol@example.com,+1-555-101-0003,,5,friend,2026-04-20,2026-04-10,1990-12-03
+4,david-okafor,David,Okafor,dokafor@example.com,+1-555-101-0004,Granite City Schools,2,civic|colorado,2026-06-01,2026-02-15,
+5,elena-ross,Elena,Ross,elena.ross@example.com,+1-555-101-0005,Peakline Design,3,colorado-ai-lab|freelancer,2026-05-10,2026-03-28,1985-08-22
+6,frank,Frank,,,+1-555-101-0006,,0,,,,
+7,grace-kim,Grace,Kim,gkim@example.com,+1-555-101-0007,Meridian Health,3,10ksb-alumni|healthcare,2026-04-30,2026-03-15,1982-03-17

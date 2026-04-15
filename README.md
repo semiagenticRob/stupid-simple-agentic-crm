@@ -16,14 +16,22 @@ gh repo create my-crm --private --clone --template semiagenticRob/stupid-simple-
 
 ### 2. Import your contacts
 
-Export your contacts from Google Contacts (or any source) as CSV, then run the import script:
+Export your contacts from Google Contacts or your phone as CSV, then run the appropriate import:
 
+**Google Contacts CSV (first-time bulk import):**
 ```bash
-python scripts/import_google_contacts.py path/to/your/contacts.csv
+python scripts/import_google_contacts.py path/to/google-contacts.csv
 python scripts/rebuild_index.py
 ```
 
-The import script handles Google Contacts CSV format out of the box. For other formats, adapt the `parse_row` function in the script or create contacts manually.
+**Phone contacts CSV or any subsequent import (deduplicates + merges):**
+```bash
+python scripts/import_contacts.py --source phone --file path/to/phone-contacts.csv --dry-run
+python scripts/import_contacts.py --source phone --file path/to/phone-contacts.csv
+python scripts/rebuild_index.py
+```
+
+The unified `import_contacts.py` is recommended for importing into an existing CRM — it deduplicates against your contacts by phone, email, and name, then merges new data additively without overwriting anything. Always `--dry-run` first. See **Importing Contacts** below for full details.
 
 ### 3. Point your agent at this repo
 
@@ -36,7 +44,7 @@ Add the repo to your agent's tools or working directory. The agent reads this RE
 ```
 contacts/          -> One YAML file per contact (SOURCE OF TRUTH)
 index/contacts.csv -> Auto-generated index for scanning (NEVER edit directly)
-scripts/           -> rebuild_index.py, import_google_contacts.py
+scripts/           -> rebuild_index.py, import_contacts.py, import_google_contacts.py
 ```
 
 ---
@@ -132,6 +140,49 @@ history: []                  # Newest first
 #   type: meeting            # meeting | call | text | email | note
 #   summary: "What happened"
 ```
+
+---
+
+## Importing Contacts
+
+Use `scripts/import_contacts.py` to bulk-import contacts from CSV files into an existing CRM. It deduplicates against existing contacts (by phone, email, then name) and merges data additively — new phone numbers and emails are added, empty fields are filled, but existing data is never overwritten. Curated fields (warmth, tags, notes, history) are never touched.
+
+**Always dry-run first:**
+```bash
+python scripts/import_contacts.py --source phone --file path/to/contacts.csv --dry-run
+```
+
+**Generate a review CSV for spreadsheet inspection:**
+```bash
+python scripts/import_contacts.py --source phone --file path/to/contacts.csv --dry-run --review-file review.csv
+```
+
+**Run the actual import:**
+```bash
+python scripts/import_contacts.py --source phone --file path/to/contacts.csv
+python scripts/rebuild_index.py
+git add contacts/ index/ && git commit -m "CRM: Import phone contacts"
+```
+
+**Supported formats:**
+- `--source phone` — Phone contacts CSV export (columns: Last name, First name, Phone : mobile, etc.)
+- `--source google` — Google Contacts CSV (use `import_google_contacts.py` directly for now)
+
+**How deduplication works:**
+1. Phone match (highest confidence) — normalizes numbers to 10 digits for comparison
+2. Email match — case-insensitive exact match
+3. Name match — case-insensitive, requires both first and last name with length guards
+4. No match — contact is created as new
+
+**How merging works (additive only):**
+- Phones/emails: adds any not already present
+- Company, job title, geography, birthday: fills in only if currently empty
+- Last name: adds if CRM has first-name-only and the import provides a surname
+- Warmth, tags, notes, history, slug, id: never touched
+
+**Name cleaning:** The phone parser handles messy data — splits full names in single fields, strips honorific prefixes (Mr., Dr., etc.), and moves descriptive last-name labels (e.g., "Neighbor", "Student") to tags. Customize the `LABEL_LAST_NAMES` set at the top of the script for your data.
+
+**Adding a new source format:** Add a `parse_{format}_csv()` function to `import_contacts.py` and register it in `run_import()`.
 
 ---
 

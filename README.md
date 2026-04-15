@@ -1,4 +1,4 @@
-# Agent CRM
+# Stupid Simple Agentic CRM
 
 A lightweight, version-controlled personal CRM that lives inside a GitHub repo. Designed to be read, searched, and updated by an AI agent.
 
@@ -11,7 +11,7 @@ Individual YAML files are the source of truth. A CSV index is auto-generated for
 Click **Fork** or clone it:
 
 ```bash
-gh repo create my-crm --private --clone --template semiagenticRob/crm-template
+gh repo create my-crm --private --clone --template semiagenticRob/stupid-simple-agentic-crm
 ```
 
 ### 2. Import your contacts
